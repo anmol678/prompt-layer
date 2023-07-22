@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./prompt-layer-api:/app
-    ports:
-      - "8000:8000"
     env_file:
       - ./prompt-layer-api/.env.dev
 
@@ -17,9 +15,19 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./prompt-layer-app:/app
-    ports:
-      - "3000:3000"
     depends_on:
       - backend
+    environment:
+      - API_URL=http://nginx:4000/api
     env_file:
       - ./prompt-layer-app/.env.dev
+
+  nginx:
+    image: nginx:1.19.0-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "4000:4000"
+    depends_on:
+      - backend
+      - frontend
