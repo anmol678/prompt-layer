@@ -1,0 +1,25 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./prompt-layer-api
+      dockerfile: Dockerfile
+    volumes:
+      - ./prompt-layer-api:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./prompt-layer-api/.env.dev
+
+  frontend:
+    build:
+      context: ./prompt-layer-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./prompt-layer-app:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    env_file:
+      - ./prompt-layer-app/.env.dev
