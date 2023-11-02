@@ -1,9 +1,9 @@
-[submodule "prompt-layer-app"]
-	path = prompt-layer-app
-	url = https://github.com/anmol678/prompt-layer-app.git
-[submodule "prompt-layer-api"]
-	path = prompt-layer-api
-	url = https://github.com/anmol678/prompt-layer-api.git
-[submodule "prompt-layer-python"]
-	path = prompt-layer-python
-	url = https://github.com/anmol678/prompt-layer-python.git
+[submodule "prompt-log-api"]
+	path = prompt-log-api
+	url = https://github.com/anmol678/prompt-log-api.git
+[submodule "prompt-log-app"]
+	path = prompt-log-app
+	url = https://github.com/anmol678/prompt-log-app.git
+[submodule "prompt-log-python"]
+	path = prompt-log-python
+	url = https://github.com/anmol678/prompt-log-python.git
