@@ -1,6 +1,6 @@
 
 # Project variables
-PROJECT_NAME = prompt-layer
+PROJECT_NAME = prompt-log
 DOCKER_COMPOSE_FILE = docker-compose.yml
 
 # Docker Compose commands
@@ -71,12 +71,12 @@ endef
 # Start the API server
 .PHONY: run-api-dev
 run-api-dev:
-	$(call run_in_new_window,$(shell pwd)/prompt-layer-api,make run-dev)
+	$(call run_in_new_window,$(shell pwd)/prompt-log-api,make run-dev)
 
 # Start the frontend server
 .PHONY: run-app-dev
 run-app-dev:
-	$(call run_in_new_window,$(shell pwd)/prompt-layer-app,npm run dev)
+	$(call run_in_new_window,$(shell pwd)/prompt-log-app,npm run dev)
 
 # Start both API and frontend server
 .PHONY: run-dev
